@@ -1,4 +1,3 @@
-telegram-bot
+python-telegram-bot
 requests
 redis
-telegram.ext
