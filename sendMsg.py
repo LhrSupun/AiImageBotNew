@@ -13,7 +13,7 @@ def tester(rq,keys):
 def send_announcments(bot_message,db_keys,bot_token,rq):
     for keys in db_keys:
         keys_values = tester(rq,keys)
-        send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?c                                                                                        hat_id=' + keys_values + '&text=' + bot_message
+        send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + keys_values + '&text=' + bot_message
         print(send_text)
         response = requests.get(send_text).json()
         print (response)
@@ -27,7 +27,7 @@ def main():
     p = Path("message_bot.txt").resolve()
     bot_message = open(str(p))
     text_content = bot_message.read()
-    send_announcments(bot_message = text_content,db_keys=db_keys,bot_token=bot_t                                                                                        oken,rq=r)
+    send_announcments(bot_message = text_content,db_keys=db_keys,bot_token=bot_token,rq=r)
 
 if __name__ == '__main__':
     main()
